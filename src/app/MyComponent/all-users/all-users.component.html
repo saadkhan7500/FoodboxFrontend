@@ -1,0 +1,23 @@
+<div class="container">
+    <table style="background-color: white;" class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>S NO.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>DOB</th>
+                <th>Phone</th>
+
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr *ngFor="let row of users;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.email }}</td>
+                <td>{{ row.dob }}</td>
+                <td>{{ row.pno }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

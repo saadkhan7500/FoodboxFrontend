@@ -1,0 +1,58 @@
+<div class="container">
+    <table style="background-color: white;" class="table table-striped ">
+        <thead class="thead-dark">
+            <tr>
+                <th>S NO.</th>
+                <th>Name</th>
+                <th>kcal</th>
+                <th>category</th>
+                <th>price</th>
+                <th>quantity</th>
+                <th>discount</th>
+                <th>imgname</th>
+                <th>status</th>
+
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr *ngFor="let row of products;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{ row.name }}</td>
+                <td>{{ row.kcal }}</td>
+                <td>{{ row.category }}</td>
+                <td>{{ row.price }}</td>
+                <th>{{row.quantity}}</th>
+                <td>{{ row.discount }}</td>
+                <td><a data-toggle="modal" data-target="#uploadModal "><img style="width:30%;height:30%"src={{row.imgname}} /></a></td>
+                <td>{{ row.status }}</td>
+                <td><button class="btn btn-warning">edit</button></td>
+                <td><button class="btn btn-danger">delete</button></td>
+                <input type="file" (change)="onFileSelected($event,row.id)">
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+   <!--Upload Image Modal Start -->
+   <div class="modal fade" id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">  Upload Image</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+            <form >
+                <input type="file" (change)="onFileSelected($event,products.id)">
+              </form>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--Upload Image Modal End -->
+
+

@@ -1,0 +1,318 @@
+<br>
+<div class="container">
+
+	<form (ngSubmit)="search()" class="d-flex">
+		
+			<input name="search" [(ngModel)]="searchProduct" class="form-control mr-sm-4" type="search"
+				placeholder="Search" aria-label="Search">
+		
+		
+			<button class="btn btn-outline-success my-3 my-sm-0" type="submit">Search</button>
+		
+	</form>
+</div>
+
+<div *ngIf="showSingIn==false" class="container mt-3">
+	<div *ngIf="flag==true" id="mySlideshow" class="carousel slide" data-ride="carousel">
+
+		<!-- Indicators -->
+		<ul class="carousel-indicators">
+			<li data-target="#mySlideshow" data-slide-to="0" class="active"></li>
+			<li data-target="#mySlideshow" data-slide-to="1"></li>
+			<li data-target="#mySlideshow" data-slide-to="2"></li>
+		</ul>
+
+		<!-- Slideshow -->
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="/assets/images/img3.jpg" alt="Slide 1" height="300">
+				<div class="carousel-caption">
+					<h1> Kitchen Story</h1>
+					<p></p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="/assets/images/food6.png" alt="Slide 2" height="300">
+				<div class="carousel-caption">
+					<h1>Second Slide</h1>
+					<p>This is the second slide.</p>
+				</div>
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="/assets/images/img2.jpg" alt="Slide 3" height="300">
+				<div class="carousel-caption">
+					<h1>Third Slide</h1>
+					<p>This is the third slide.</p>
+				</div>
+			</div>
+		</div>
+
+		<!-- Left and right controls -->
+		<a class="carousel-control-prev" href="#mySlideshow" data-slide="prev">
+			<span class="carousel-control-prev-icon"></span>
+		</a>
+		<a class="carousel-control-next" href="#mySlideshow" data-slide="next">
+			<span class="carousel-control-next-icon"></span>
+		</a>
+
+	</div>
+
+	<br>
+
+
+
+	<div style="background-color:rgb(255, 255, 255); height: 400px; padding-top:30px;padding-left: 30px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);"
+		*ngIf="flag==false" class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<img style="width:300px;height:300px; border-radius: 20px;" src={{product.imgname}} alt="">
+			</div>
+			<div class="col-md-8">
+				<div style="text-align: left;">
+					<ul>
+						<li>
+							<h3>{{product.name}}</h3>
+						</li>
+						<li>
+							<h4 style="color: green;"> ●{{product.category}} </h4>
+						</li>
+						<li>
+							<h4 style="color: red;">❤{{product.kcal}} Kcal</h4>
+						</li>
+						<li>
+							<h3><s>{{product.price}} ₹ </s> </h3>
+						</li>
+						<li>
+							<h4>-{{product.discount}} % Off</h4>
+						</li>
+
+						<button class="btn btn-success" (click)="order()">Order Now</button>
+					</ul>
+				</div>
+
+				<button class="btn btn-danger" (click)="breakdownOff()">X</button>
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+	<section class="main-content">
+		<div class="container">
+			<h3 style="text-align: center;color: rgb(28, 28, 25);">Order you favorite foods</h3>
+
+			<div class="row">
+				<div *ngFor="let product of products" class="col-sm-6 col-md-6 col-lg-3">
+					<div style="border-radius: 20px;" class="food-card bg-white rounded-lg overflow-hidden mb-4 shadow">
+						<div class="food-card_img position-relative">
+							<img style="width:100%;height:200px;" src={{product.imgname}} alt="">
+							<a href="#!"><i class="far fa-heart"></i></a>
+						</div>
+						<div class="food-card_content">
+							<div class="overflow-hidden">
+								<h4 class="food-card_title">{{product.name}}</h4>
+							</div>
+							<div class="food-card_bottom-section">
+								<div class="d-flex justify-content-between">
+									<div><span class="fa fa-fire"></span>{{product.kcal}}</div>
+									<div>
+										<span>{{product.category}}</span>
+									</div>
+								</div>
+								<hr>
+								<div class="d-flex justify-content-between">
+									<div class="food-card_price">
+										<span>{{product.price}}₹</span>
+									</div>
+									<div class="food-card_order-count">
+										<div class="input-group mb-3">
+											<div class="input-group-prepend">
+												<button class="btn btn-outline-secondary minus-btn" type="button"
+													id="button-addon1">-</button>
+											</div>
+											<input type="text" class="form-control input-manulator" placeholder=""
+												aria-label="Example text with button addon"
+												aria-describedby="button-addon1" value="0">
+											<div class="input-group-append">
+												<button class="btn btn-outline-secondary add-btn" type="button"
+													id="button-addon1">+</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<button (click)="breakdown(product)" class="btn btn-outline-success">order</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+</div>
+
+
+<!-- signIn form starts here-->
+<div *ngIf="showSingIn==true && showSignUp==false" class="justify-content-center align-items-center"
+	style="margin-top: 1.5%;">
+	<div class="container">
+		<div class="row d-flex justify-content-center">
+			<div class="col-12 col-md-8 col-lg-6">
+				<div class="card bg-white">
+					<div class="card-body p-5">
+						<form (ngSubmit)="SignIn()" class="mb-3 mt-md-4">
+							<h2 class="fw-bold mb-2 text-uppercase ">User Login</h2>
+							<p class=" mb-5">Please enter your login and password!</p>
+							<div class="mb-3">
+								<label for="email" class="form-label ">Email address</label>
+								<input type="email" class="form-control" id="email" name="email"
+									[(ngModel)]="data.email" placeholder="name@example.com">
+							</div>
+							<div class="mb-3">
+								<label for="password" class="form-label ">Password</label>
+								<input type="password" class="form-control" id="password" name="password"
+									[(ngModel)]="data.password" placeholder="*******">
+							</div>
+							<span style="color:red;" id="msg"></span>
+							<p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a>
+							</p>
+							<div class="d-grid">
+								<button class="btn btn-outline-dark" type="submit" onclick="save()">Login</button>
+							</div>
+						</form>
+						<div>
+							<p class="mb-0  text-center">Don't have an account? <a (click)="showSignUp=true"
+									class="btn btn-primary  fw-bold">Sign
+									Up</a></p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- signIn form end here -->
+
+
+
+<!-- signUp form starts here -->
+<div *ngIf="showSignUp==true" class="page-wrapper font-poppins" style="margin-top: 2%;">
+	<div class="row ">
+		<div class="col-md-6">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+						<h2 class="title">General Information</h2>
+
+						<div class="form-outline mb-2">
+
+							<label class="label">Name</label>
+							<input class="form-control form-control-lg" type="text" name="name" type="text"
+								[(ngModel)]="userData.name">
+						</div>
+						<div class="form-outline mb-2">
+
+							<label class="label">Email</label>
+							<input class="form-control form-control-lg" type="text" name="email"
+								[(ngModel)]="userData.email">
+
+						</div>
+
+
+						<div class="form-outline mb-2">
+							<div class="input-group">
+								<label class="label">Birthday</label>
+								<div class="input-group-icon">
+									<input class="input--style-4 js-datepicker" id="dob" type="date" name="dob"
+										[(ngModel)]="userData.dob">
+									<i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-outline mb-2">
+							<label class="label">Gender</label>
+							<div class="p-t-10">
+								<label class="radio-container m-r-45">Male
+									<input type="radio" name="gender" [(ngModel)]="userData.gender" value="male">
+									<span class="checkmark"></span>
+								</label>
+								<label class="radio-container">Female
+									<input type="radio" name="gender" [(ngModel)]="userData.gender" value="female">
+									<span class="checkmark"></span>
+								</label>
+							</div>
+						</div>
+
+
+
+						<div class="form-outline mb-2">
+							<label class="label">Phone Number</label>
+							<input class="form-control form-control-lg" id="pno" type="text" name="pno"
+								[(ngModel)]="userData.pno">
+						</div>
+
+						<div class="form-outline mb-4">
+							<label class="label">Password</label>
+							<input class="form-control form-control-lg" id="password" type="password" name="password"
+								[(ngModel)]="userData.password">
+						</div>
+
+
+						<span style="color:green;" id="msg"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-md-6">
+			<div class="wrapper wrapper--w680">
+				<div class="card card-4">
+					<div class="card-body">
+						<form (ngSubmit)="addUser()">
+							<h2 class="title">Address Details</h2>
+
+							<div class="form-outline mb-4">
+								<input type="text" name="address" [(ngModel)]="userData.userAddress.address"
+									class="form-control form-control-lg" placeholder="Address" id="address" />
+							</div>
+
+
+							<div class="form-outline mb-4">
+								<input type="text" name="zipCode" [(ngModel)]="userData.userAddress.zipCode"
+									class="form-control form-control-lg" placeholder="Zip Code" id="zipcode" />
+							</div>
+
+							<div class="form-outline mb-4">
+								<input type="text" name="city" [(ngModel)]="userData.userAddress.city"
+									class="form-control form-control-lg" placeholder="City" id="city" />
+							</div>
+
+							<div class="form-outline mb-4">
+								<input type="text" name="state" [(ngModel)]="userData.userAddress.state"
+									class="form-control form-control-lg" placeholder="State" id="state" />
+							</div>
+
+							<div class="form-outline mb-4">
+								<input type="text" name="country" [(ngModel)]="userData.userAddress.country"
+									class="form-control form-control-lg" placeholder="Country" id="country" />
+							</div>
+
+							<div class="p-t-15">
+								<button type="submit" class="btn btn-primary" id="bt">Register</button>
+
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- signUp page ends here -->

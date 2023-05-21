@@ -1,0 +1,104 @@
+<nav *ngIf="this.service2.getState()=='main'" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a style="margin-left: 5%;" class="navbar-brand" href="#">Kitchen Story</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+
+    
+    <ul class="navbar-nav">
+      <li style="margin-left: 10%;">
+        <a class="nav-link btn btn-warning text-black">Dashboard</a>
+      </li>
+  </ul>
+    <ul style="margin-left: 70%;" class="nav navbar-nav navbar-right">
+      <li>
+        <a class="nav-link" routerLink="/signIn">signIn</a>
+      </li>
+
+
+      <li>
+        <a class="nav-link" routerLink="/signUp">signUp</a>
+      </li>
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+
+<nav *ngIf="this.service2.getState()=='admin'" class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a style="margin-left: 5%;" class="navbar-brand" href="#">Kitchen Story</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <ul class="navbar-nav">
+        <li>
+          <a class="nav-link btn btn-warning text-black">Admin</a>
+        </li>
+    </ul>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminArea/allUsers">Users</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminArea/allProducts">Products</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/adminArea/addProduct">Product +</a>
+      </li>
+      <li class="nav-item">
+      <a  class="nav-link"  routerLink="/adminArea/resetPassword" >reset password</a>
+    </li>
+    </ul>
+
+    <ul  style="margin-left: 57%;" class="nav navbar-nav navbar-right">
+     
+       
+      <li>
+        <a class="nav-link" routerLink="/" (click)="signOut()">SignOut</a>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+ <!-- user nav bar -->
+<nav *ngIf="this.service2.getState()=='user' " class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a style="margin-left: 5%;" class="navbar-brand" href="#">Kitchen Story</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li>
+        <a class="nav-link btn btn-warning text-black">{{user.name}}</a>
+      </li>
+  </ul>
+
+    <ul style="margin-left: 75%;" class="nav navbar-nav navbar-right">
+      <li>
+        <a class="nav-link" routerLink="/" (click)="signOut()">SignOut</a>
+      </li>
+
+
+    </ul>
+
+  </div>
+</nav>
+
+
+
+
+
+

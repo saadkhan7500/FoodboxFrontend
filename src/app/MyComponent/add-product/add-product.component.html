@@ -1,0 +1,51 @@
+<div class="loginDiv">
+  <div style="background-color:rgb(206, 197, 197)"class="formDiv">
+    <h2>Add Product</h2>
+    <hr>
+    <div style="display: inline-block;">
+      <form  (ngSubmit)="addProduct()">
+        <!-- Name input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example1">Name</label>
+          <input name="email"  [(ngModel)]="product.name" type="text" id="form2Example1" class="form-control" />
+        </div>
+  
+         <!--Category  input-->
+         <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example1">category</label>
+          <input name="name" type="text" [(ngModel)]="product.category" id="form2Example2" class="form-control" />
+        </div>
+  
+         <!-- Kcal input -->
+         <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example1">Kcal</label>
+          <input name="dob"  [(ngModel)]="product.kcal" type="text" id="form2Example3" class="form-control" />
+        </div>
+  
+         <!-- price input -->
+         <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example1">Price</label>
+          <input name="gender"  [(ngModel)]="product.price" type="email" id="form2Example4" class="form-control" />
+        </div>
+  
+         <!-- Quantity input -->
+         <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example1">Quantity</label>
+          <input name="pno"  [(ngModel)]="product.quantity" type="text" id="form2Example5" class="form-control" />
+        </div>
+  
+        <!-- Discount input -->
+        <div class="form-outline mb-4">
+          <label class="form-label" for="form2Example2">Discount</label>
+          <input name="password"  [(ngModel)]="product.discount" type="password" id="form2Example6" class="form-control" />
+        </div>
+  
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-4">Add Product</button>
+        <!-- 2 column grid layout for inline styling -->
+      </form>
+    </div>
+  </div>
+</div> 
+  <!-- Registration Form end -->
+

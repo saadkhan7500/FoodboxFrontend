@@ -1,0 +1,22 @@
+.loginDiv
+{
+    text-align: center;
+    width: 100%;
+    padding-top: 2%;
+    background-color: white;
+
+}
+.loginDiv form
+{
+    margin-top: 5%;
+}
+
+.formDiv
+{
+    width: 50%;
+    padding: 5%;
+    padding-top: 1%;
+    margin-left: 23%;
+    border: 1px solid black;
+    border-radius: 20px;
+}

@@ -1,0 +1,25 @@
+<div style="background-color: white;">
+
+  <div class="container">
+    <table style="background-color: white;" class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+              <th>S No</th>
+                <th>Product ID</th>
+                <th>Customer ID</th>
+                <th>Status</th>
+
+
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr *ngFor="let row of purchased;let i = index">
+                <td>{{i+1}}</td>
+                <td>{{ row.productId}}   <a style="color: blue;font-size: 20px;" (mouseenter)="productDetail(row.productId)" data-toggle="tooltip" title={{productID}}>📄</a></td>
+                <td>{{ row.userEmail}}   <a style="color: blue;font-size: 20px;" (mouseenter)="userDetail(row.userEmail)" data-toggle="tooltip" title={{userEmail}}>📄</a></td>
+                <td><button>⇜</button>{{ row.status}} 🤔 <button>⇝</button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  </div>
