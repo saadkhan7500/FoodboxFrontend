@@ -1,0 +1,128 @@
+<div class="page-wrapper font-poppins" style="margin-top: 2%;">
+    <div class="row ">
+        <div class="col-md-6">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-4">
+                    <div class="card-body">
+                        <h2 class="title">General Information</h2>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Name</label>
+                                        <input class="input--style-4" id="name" type="text" name="name" type="text"
+                                            [(ngModel)]="data.name">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Email</label>
+                                        <input class="input--style-4" id="email" type="text" name="email"
+                                            [(ngModel)]="data.email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Birthday</label>
+                                        <div class="input-group-icon">
+                                            <input class="input--style-4 js-datepicker" id="dob" type="date" name="dob"
+                                                [(ngModel)]="data.dob">
+                                            <i class="zmdi zmdi-calendar-note input-icon js-btn-calendar"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Gender</label>
+                                        <div class="p-t-10">
+                                            <label class="radio-container m-r-45">Male
+                                                <input type="radio" name="gender" [(ngModel)]="data.gender"
+                                                    value="male">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                            <label class="radio-container">Female
+                                                <input type="radio" name="gender" [(ngModel)]="data.gender"
+                                                    value="female">
+                                                <span class="checkmark"></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Phone Number</label>
+                                        <input class="input--style-4" id="pno" type="text" name="pno"
+                                            [(ngModel)]="data.pno">
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="input-group">
+                                        <label class="label">Password</label>
+                                        <input class="input--style-4 " id="password" type="password" name="password"
+                                            [(ngModel)]="data.password">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <span style="color:green;" id="msg"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="wrapper wrapper--w680">
+                <div class="card card-4">
+                    <div class="card-body">
+                        <form (ngSubmit)="addUser()">
+                            <h2 class="title">Address Details</h2>
+                            <div class="row row-space">
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="address" [(ngModel)]="data.userAddress.address"
+                                        class="form-control form-control-lg" placeholder="Address" id="address" />
+                                </div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" name="zipCode" [(ngModel)]="data.userAddress.zipCode"
+                                    class="form-control form-control-lg" placeholder="Zip Code" id="zipcode" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" name="city" [(ngModel)]="data.userAddress.city"
+                                    class="form-control form-control-lg" placeholder="City" id="city" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" name="state" [(ngModel)]="data.userAddress.state"
+                                    class="form-control form-control-lg" placeholder="State" id="state" />
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" name="country" [(ngModel)]="data.userAddress.country"
+                                    class="form-control form-control-lg" placeholder="Country" id="country" />
+                            </div>
+
+                            <div *ngIf="flag==true" class="progress">
+                              <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                            </div>
+                            <br>
+                            <div *ngIf="showmsg==true" class="row">
+                              <h3 style="color: green;" class="text-center">Registered Successfully ✅</h3>
+                          </div>
+
+                            <div class="p-t-15">
+                                <button type="submit" class="btn btn--radius-2 btn--blue" id="bt">Register</button>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

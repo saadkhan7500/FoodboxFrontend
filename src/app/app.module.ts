@@ -14,6 +14,8 @@ import { UserService } from './MyServices/user.service';
 import { NavBarComponent } from './MyComponent/nav-bar/nav-bar.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UserSignInComponent } from './MyComponent/user-sign-in/user-sign-in.component';
+import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
     AllProductsComponent,
     AddProductComponent,
     OrderRequestsComponent,
+    UserSignInComponent,
+    UserSignUpComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,13 @@ import { AllProductsComponent } from './MyComponent/all-products/all-products.co
 import { AddProductComponent } from './MyComponent/add-product/add-product.component';
 import { OrderRequestsComponent } from './MyComponent/order-requests/order-requests.component';
 import { ResetPasswordComponent } from './MyComponent/reset-password/reset-password.component';
+import { UserSignInComponent } from './MyComponent/user-sign-in/user-sign-in.component';
+import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.component';
 
 const routes: Routes = [
   {path:"footer", component:FooterComponent},
+  {path:"signIn" , component:UserSignInComponent},
+  {path:"signUp" , component:UserSignUpComponent},
   {path:"", component:MainComponent},
   {path:"adminArea",component:AdminAreaComponent,
     children:
