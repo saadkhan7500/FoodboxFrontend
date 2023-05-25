@@ -16,6 +16,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UserSignInComponent } from './MyComponent/user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.component';
+import { UserAreaComponent } from './MyComponent/user-area/user-area.component';
+import { OrderComponent } from './MyComponent/order/order.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.com
     OrderRequestsComponent,
     UserSignInComponent,
     UserSignUpComponent,
+    UserAreaComponent,
+    OrderComponent,
   ],
   imports: [
     BrowserModule,

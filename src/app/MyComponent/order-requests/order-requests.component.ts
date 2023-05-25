@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServiceService } from 'src/app/MyServices/product-service.service';
-import { PurchasedService } from 'src/app/MyServices/purchased.service';
+import { PurchasedServiceService } from 'src/app/MyServices/purchased-service.service';
+
 import { UserService } from 'src/app/MyServices/user.service';
 
 @Component({
@@ -14,7 +15,7 @@ export class OrderRequestsComponent implements OnInit
   purchased:any;
   productID:any;
   userEmail:any;
-  constructor(private service: PurchasedService, private userService: UserService, private productService: ProductServiceService ){}
+  constructor(private service: PurchasedServiceService, private userService: UserService, private productService: ProductServiceService ){}
 
   productDetail(productId:any)
   {

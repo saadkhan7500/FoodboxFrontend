@@ -10,12 +10,17 @@ import { OrderRequestsComponent } from './MyComponent/order-requests/order-reque
 import { ResetPasswordComponent } from './MyComponent/reset-password/reset-password.component';
 import { UserSignInComponent } from './MyComponent/user-sign-in/user-sign-in.component';
 import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.component';
+import { UserAreaComponent } from './MyComponent/user-area/user-area.component';
+import { OrderComponent } from './MyComponent/order/order.component';
 
 const routes: Routes = [
   {path:"footer", component:FooterComponent},
   {path:"signIn" , component:UserSignInComponent},
   {path:"signUp" , component:UserSignUpComponent},
   {path:"", component:MainComponent},
+  {path:"order", component:OrderComponent},
+
+  {path:"userArea", component: UserAreaComponent},
   {path:"adminArea",component:AdminAreaComponent,
     children:
     [
