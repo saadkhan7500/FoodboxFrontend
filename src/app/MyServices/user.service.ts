@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UserService {
 
-  private baseUrl:string="http://localhost:1111"
+  private baseUrl:string="http://localhost:8087"
   constructor(private http:HttpClient) { }
 
   addUser(data:any)

@@ -25,9 +25,9 @@ export class UserSignInComponent implements OnInit {
   getApiUrl(username: string) {
     const [, domain] = username.split('@');
     if (domain === 'admin.com') {
-      return 'http://localhost:1111/checkAdmin';
+      return 'http://localhost:8087/checkAdmin';
     } else {
-      return 'http://localhost:1111/checkUser';
+      return 'http://localhost:8087/checkUser';
     }
   }
 
