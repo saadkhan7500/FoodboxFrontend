@@ -1,0 +1,23 @@
+<br>
+<div class="container">
+  <table style="background-color: white;" class="table table-striped">
+      <thead class="thead-dark">
+          <tr>
+            <th>S No</th>
+              <th>Product ID</th>
+              <th>Customer ID</th>
+              <th>Status</th>
+
+
+          </tr>
+      </thead>
+      <tbody class="tbody">
+          <tr *ngFor="let row of purchased;let i = index">
+              <td>{{i+1}}</td>
+              <td>{{ row.productId}}   <a style="color: blue;font-size: 20px;" (mouseenter)="productDetail(row.productId)" data-toggle="tooltip" title={{productID}}>📄</a></td>
+         s     <td>{{ row.userEmail}}</td>
+              <td>{{ row.status}} 🤔 </td>
+          </tr>
+      </tbody>
+  </table>
+</div>

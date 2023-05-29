@@ -14,12 +14,12 @@
   </ul>
     <ul style="margin-left: 70%;" class="nav navbar-nav navbar-right">
       <li>
-        <a class="nav-link" routerLink="/signIn">signIn</a>
+        <a style="color: #000;" class="nav-link " routerLink="/signIn">signIn</a>
       </li>
 
 
       <li>
-        <a class="nav-link" routerLink="/signUp">signUp</a>
+        <a style="color: #000;" class="nav-link" routerLink="/signUp">signUp</a>
       </li>
 
     </ul>
@@ -85,7 +85,11 @@
         <a class="nav-link btn btn-warning text-black">{{user.name}}</a>
       </li>
   </ul>
-
+  <ul class="navbar-nav">
+    <li>
+      <a class="nav-link btn btn-success text-black" routerLink="myOrders">My Orders</a>
+    </li>
+</ul>
     <ul style="margin-left: 75%;" class="nav navbar-nav navbar-right">
       <li>
         <a class="nav-link" routerLink="/" (click)="signOut()">SignOut</a>

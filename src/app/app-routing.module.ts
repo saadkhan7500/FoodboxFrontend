@@ -12,6 +12,7 @@ import { UserSignInComponent } from './MyComponent/user-sign-in/user-sign-in.com
 import { UserSignUpComponent } from './MyComponent/user-sign-up/user-sign-up.component';
 import { UserAreaComponent } from './MyComponent/user-area/user-area.component';
 import { OrderComponent } from './MyComponent/order/order.component';
+import { MyOrdersComponent } from './MyComponent/my-orders/my-orders.component';
 
 const routes: Routes = [
   {path:"footer", component:FooterComponent},
@@ -19,9 +20,10 @@ const routes: Routes = [
   {path:"signUp" , component:UserSignUpComponent},
   {path:"", component:MainComponent},
   {path:"order", component:OrderComponent},
-
   {path:"userArea", component: UserAreaComponent},
+  {path:"myOrders", component:MyOrdersComponent},
   {path:"adminArea",component:AdminAreaComponent,
+
     children:
     [
      {path:"allUsers",component:AllUsersComponent},
